@@ -5,7 +5,7 @@ const toyForm = document.querySelector('.add-toy-form')
 const toyCollection = document.querySelector('#toy-collection')
 
 const newToyButton = document.getElementById('newToyButton')
-
+const createNewToyButton = document.getElementById('createNewToy')
 
 let addToy = false
 
@@ -21,10 +21,10 @@ addBtn.addEventListener('click', () => {
     toyFormDiv.style.display = 'none'
     addBtn.innerText = "Add a new toy!"
   }
-  newToyButton.addEventListener('click', () => {
+  createNewToyButton.addEventListener('click', () => {
     // So we want to take the input data from name and url and output it to the json...
     let nameInput = document.getElementsByClassName('input-text')[0].value
-    let imageInput = document.getElementsByClassName('input-text')[0].Value
+    let imageInput = document.getElementsByClassName('input-text')[1].Value
     fetch(toyURL, {
       method: 'POST',
       headers: {
@@ -42,11 +42,7 @@ addBtn.addEventListener('click', () => {
 
 // OR HERE!
 
-// function fetchToys() {
-//   return fetch(toyURL, function() {
-//     console.log("Fetchin")
-//   })
-// }
+
 document.addEventListener('DOMContentLoaded', function(){
 fetch(toyURL)
 .then(response => response.json())
